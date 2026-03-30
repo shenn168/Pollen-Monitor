@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>PollenWatch</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <header id="header">
+      <div class="header-left">
+        <span class="logo">🌿</span>
+        <h1>PollenWatch</h1>
+      </div>
+      <button id="btn-settings" title="Settings">⚙️</button>
+    </header>
+
+    <div id="location-bar">
+      <select id="location-select"></select>
+      <button id="btn-refresh" title="Refresh">🔄</button>
+    </div>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Fetching pollen data...</p>
+    </div>
+
+    <div id="error" class="hidden">
+      <p id="error-msg"></p>
+    </div>
+
+    <div id="current" class="hidden">
+      <div id="overall-banner"></div>
+      <div class="section-title">Allergen Breakdown</div>
+      <div id="cards-grid"></div>
+      <div id="triggers-section" class="hidden">
+        <div class="section-title">Top Allergens Today</div>
+        <div id="triggers-list"></div>
+      </div>
+      <div id="weather-info"></div>
+      <button id="btn-forecast" class="btn-primary">📅 View 5-Day Forecast</button>
+    </div>
+
+    <div id="settings" class="hidden">
+      <div class="section-title">Manage Locations</div>
+      <div id="zip-list"></div>
+      <div class="add-zip-row">
+        <input type="text" id="input-zip" placeholder="Enter ZIP code" maxlength="10">
+        <button id="btn-add-zip" class="btn-small">Add</button>
+      </div>
+      <button id="btn-back" class="btn-secondary">← Back</button>
+    </div>
+
+    <div id="first-run" class="hidden">
+      <div class="first-run-icon">🌿</div>
+      <h2>Welcome to PollenWatch</h2>
+      <p>Enter your ZIP code to get started.</p>
+      <div class="add-zip-row">
+        <input type="text" id="input-zip-first" placeholder="ZIP code" maxlength="10">
+        <button id="btn-add-first" class="btn-primary">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  min-height: 200px;
+  max-height: 600px;
+  overflow-y: auto;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+body::-webkit-scrollbar { width: 6px; }
+body::-webkit-scrollbar-track { background: #1e293b; }
+body::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+#app { padding: 16px; }
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.header-left { display: flex; align-items: center; gap: 8px; }
+.logo { font-size: 22px; }
+#header h1 { font-size: 18px; font-weight: 700; color: #22c55e; }
+#btn-settings {
+  background: none; border: none; font-size: 18px;
+  cursor: pointer; padding: 4px; border-radius: 6px; transition: background 0.2s;
+}
+#btn-settings:hover { background: #1e293b; }
+
+#location-bar { display: flex; gap: 8px; margin-bottom: 14px; }
+#location-select {
+  flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid #334155;
+  background: #1e293b; color: #e2e8f0; font-size: 13px; cursor: pointer; outline: none;
+}
+#location-select:focus { border-color: #22c55e; }
+#btn-refresh {
+  background: #1e293b; border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; cursor: pointer; font-size: 14px; transition: background 0.2s;
+}
+#btn-refresh:hover { background: #334155; }
+
+.section-title {
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: #94a3b8; margin-bottom: 10px; margin-top: 12px;
+}
+
+/* Overall Banner */
+#overall-banner {
+  border-radius: 10px; padding: 14px; margin-bottom: 10px; text-align: center;
+}
+.banner-index { font-size: 36px; font-weight: 800; }
+.banner-label { font-size: 14px; font-weight: 600; margin-top: 2px; }
+.banner-scale { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+
+/* Cards Grid */
+#cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+
+.pollen-card {
+  background: #1e293b; border-radius: 10px; padding: 12px;
+  border-left: 4px solid #475569; transition: transform 0.15s;
+}
+.pollen-card:hover { transform: translateY(-1px); }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.card-type { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; }
+.card-emoji { font-size: 16px; }
+.card-value { font-size: 22px; font-weight: 700; margin-bottom: 2px; }
+.card-label { font-size: 11px; color: #64748b; }
+.card-bar { height: 4px; border-radius: 2px; background: #334155; margin-top: 8px; overflow: hidden; }
+.card-bar-fill { height: 100%; border-radius: 2px; transition: width 0.6s ease; }
+
+/* Triggers */
+#triggers-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.trigger-tag {
+  display: inline-block; padding: 4px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; background: #1e293b; border: 1px solid #334155;
+}
+.trigger-tag.tree { border-color: #22c55e55; color: #22c55e; }
+.trigger-tag.grass { border-color: #eab30855; color: #eab308; }
+.trigger-tag.weed { border-color: #f9731655; color: #f97316; }
+.trigger-tag.mold { border-color: #a855f755; color: #a855f7; }
+
+/* Weather Info */
+#weather-info {
+  background: #1e293b; border-radius: 8px; padding: 10px;
+  margin-bottom: 12px; font-size: 12px; color: #94a3b8;
+  display: flex; justify-content: space-around; flex-wrap: wrap; gap: 6px;
+}
+.weather-item { text-align: center; }
+.weather-val { font-size: 14px; font-weight: 700; color: #e2e8f0; }
+
+/* Buttons */
+.btn-primary {
+  width: 100%; padding: 10px; border: none; border-radius: 8px;
+  background: #22c55e; color: #052e16; font-weight: 600; font-size: 13px;
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-primary:hover { background: #16a34a; }
+.btn-secondary {
+  width: 100%; padding: 10px; border: 1px solid #334155; border-radius: 8px;
+  background: #1e293b; color: #e2e8f0; font-weight: 600; font-size: 13px;
+  cursor: pointer; transition: background 0.2s; margin-top: 10px;
+}
+.btn-secondary:hover { background: #334155; }
+.btn-small {
+  padding: 8px 16px; border: none; border-radius: 8px;
+  background: #22c55e; color: #052e16; font-weight: 600; font-size: 13px; cursor: pointer;
+}
+.btn-small:hover { background: #16a34a; }
+
+/* Settings */
+#zip-list { margin-bottom: 10px; }
+.zip-item {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #1e293b; border-radius: 8px; padding: 8px 12px; margin-bottom: 6px;
+}
+.zip-info { display: flex; flex-direction: column; }
+.zip-code { font-weight: 600; font-size: 14px; }
+.zip-name { font-size: 11px; color: #64748b; }
+.btn-delete {
+  background: none; border: none; color: #ef4444; cursor: pointer;
+  font-size: 16px; padding: 2px 6px; border-radius: 4px;
+}
+.btn-delete:hover { background: #450a0a; }
+
+.add-zip-row { display: flex; gap: 8px; }
+.add-zip-row input {
+  flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid #334155;
+  background: #1e293b; color: #e2e8f0; font-size: 13px; outline: none;
+}
+.add-zip-row input:focus { border-color: #22c55e; }
+
+/* First Run */
+#first-run { text-align: center; padding: 30px 10px; }
+.first-run-icon { font-size: 48px; margin-bottom: 12px; }
+#first-run h2 { color: #22c55e; margin-bottom: 8px; }
+#first-run p { color: #94a3b8; margin-bottom: 20px; font-size: 13px; }
+#first-run .add-zip-row { justify-content: center; }
+
+/* Loading */
+#loading { text-align: center; padding: 40px 0; }
+.spinner {
+  width: 32px; height: 32px; border: 3px solid #334155; border-top-color: #22c55e;
+  border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+#loading p { color: #94a3b8; font-size: 13px; }
+
+/* Error */
+#error { text-align: center; padding: 20px; color: #ef4444; }
+
+.hidden { display: none !important; }
+
+/* Source Label */
+.source-label {
+  text-align: center; font-size: 10px; color: #475569; margin-top: 8px; margin-bottom: 4px;
+}

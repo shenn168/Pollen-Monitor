@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "PollenWatch",
+  "version": "1.1.0",
+  "description": "Free pollen, mold & allergen counts and forecasts by zip code.",
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://api.open-meteo.com/*",
+    "https://api.zippopotam.us/*",
+    "https://www.pollen.com/*",
+    "https://api.ambeedata.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
